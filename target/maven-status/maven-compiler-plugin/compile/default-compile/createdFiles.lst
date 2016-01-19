@@ -1,0 +1,4 @@
+com/daniel/model/User.class
+com/daniel/dao/UserDao.class
+com/daniel/App.class
+com/daniel/util/HibernateUtil.class
