@@ -11,7 +11,9 @@ public class App {
 	public static void main(String[] args) {
 		UserDao dao = new UserDao();
 
-		// Add new user
+		/**
+		 * AGREGO UN NUEVO USUARIO
+		 */
 		User user = new User();
 		user.setFirstName("Daniel");
 		user.setLastName("Niko");
@@ -24,20 +26,27 @@ public class App {
 		user.setEmail("daniel@example.com");
 		dao.addUser(user);
 
-		// Update user
-		user.setEmail("daniel@updated.com");
-		dao.updateUser(user);
+		/**
+		 * ACTUALIZO UN USUARIO
+		 */
 
-		// Delete user
+		// user.setEmail("daniel@EMAILACTUALIZADO.com");
+		// dao.updateUser(user);
+
+		/**
+		 * BORRO UN USUARIO
+		 */
 		// dao.deleteUser(1);
 
 		// Get all users
-		for (User iter : dao.getAllUsers()) {
-			System.out.println(iter);
+		for (User u : dao.getAllUsers()) {
+			System.out.println(u);
 		}
 
-		// Get user by id
-		System.out.println(dao.getUserById(2));
+		/**
+		 * OBTENGO UN USUARIO POR ID
+		 */
+		// System.out.println(dao.getUserById(2));
 	}
 
 }
