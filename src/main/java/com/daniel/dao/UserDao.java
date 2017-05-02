@@ -30,12 +30,12 @@ public class UserDao {
 		}
 	}
 
-	public void deleteUser(int userid) {
+	public void deleteUser(int id) {
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		try {
 			trns = session.beginTransaction();
-			User user = (User) session.load(User.class, new Integer(userid));
+			User user = (User) session.load(User.class, new Integer(id));
 			session.delete(user);
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
@@ -83,7 +83,7 @@ public class UserDao {
 		return users;
 	}
 
-	public User getUserById(int userid) {
+	public User getUserById(int id) {
 		User user = null;
 		Transaction tx = null;
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -91,7 +91,7 @@ public class UserDao {
 			tx = session.beginTransaction();
 			String queryString = "from User where id = :id";
 			Query query = session.createQuery(queryString);
-			query.setInteger("id", userid);
+			query.setInteger("id", id);
 			user = (User) query.uniqueResult();
 		} catch (RuntimeException e) {
 			e.printStackTrace();

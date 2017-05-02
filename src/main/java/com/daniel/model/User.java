@@ -4,18 +4,18 @@ import java.util.Date;
 
 public class User {
 
-	private int userid;
+	private int id;
 	private String firstName;
 	private String lastName;
 	private Date dob;
 	private String email;
 
-	public int getUserid() {
-		return userid;
+	public int getId() {
+		return id;
 	}
 
-	public void setUserid(int userid) {
-		this.userid = userid;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -52,8 +52,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userid=" + userid + ", firstName=" + firstName + ", lastName=" + lastName + ", dob=" + dob
-				+ ", email=" + email + "]";
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", dob=" + dob + ", email="
+				+ email + "]";
 	}
 
 }
